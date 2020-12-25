@@ -117,4 +117,5 @@ dictionary = [['Abaddon', 'abaddon', 'aba'],
               ['Winter Wyvern', 'winter wyvern', 'ww', 'winter'],
               ['Witch Doctor', 'witch doctor', 'wd', 'witch', 'doctor'],
               ['Wraith King', 'wraith king', 'wk', 'skeleton king', 'skeleton', 'wraith'],
-              ['Zeus', 'zeus', 'zuus']]
+              ['Zeus', 'zeus', 'zuus'],
+              ['Random', 'random', 'r']]
