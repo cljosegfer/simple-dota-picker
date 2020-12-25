@@ -11,8 +11,8 @@ enemy_team = ['enigma',
               'phoenix', 
               'storm', 
               'wind']
-# for i in range(len(enemy_team)):
-#     enemy_team[i] = input("Enter the enemy hero: ")
+for i in range(len(enemy_team)):
+    enemy_team[i] = input("Enter the enemy hero: ")
 
 decision_table = np.zeros((len(enemy_team), reference_table.shape[1] - 1))
 
