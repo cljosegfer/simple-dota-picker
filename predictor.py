@@ -18,6 +18,7 @@ decision_table = np.zeros((len(enemy_team), reference_table.shape[1] - 1))
 i = 0
 j = 0
 for enemy in enemy_team:
+    box = np.zeros((1, len(formal_names) + 1))
     for hero in reference_table['Hero']:
         if enemy == hero:
             box = reference_table[reference_table['Hero']==enemy].to_numpy()
@@ -25,10 +26,11 @@ for enemy in enemy_team:
     i+=1
     j+=1
 
-total = np.zeros(reference_table.shape[1] - 1)
-for line in range(len(total)):
-    total[line] = np.sum(decision_table[:,line])
+decision_table = np.append(decision_table,
+                           [np.sum(decision_table, axis = 0)], axis = 0)
 
-total = pd.DataFrame(total, index=formal_names, columns=['Delta'])
-total = total.sort_values(by = ['Delta'])
-print(total.head(3))
+enemy_team.append('Delta')
+result = pd.DataFrame(np.transpose(decision_table),
+                      index = formal_names, columns = enemy_team)
+result = result.sort_values(by = ['Delta'])
+print(result.head(5))
