@@ -2,9 +2,9 @@ import pandas as pd
 import numpy as np
 
 from hparams import favorite_heroes
-from hero_dictionary import dictionary
+from conversion.hero_dictionary import dictionary
 
-reference_table = pd.read_csv('reference_table.csv')
+reference_table = pd.read_csv('conversion/reference_table.csv')
 
 enemy_team = ['enigma', 
               'dusa', 

@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 
-reference_table = pd.read_csv('reference_table.csv')
-pickrate_table = pd.read_csv('pickrate_table.csv')
+reference_table = pd.read_csv('conversion/reference_table.csv')
+pickrate_table = pd.read_csv('conversion/pickrate_table.csv')
 reference = reference_table.to_numpy()
 pickrate = pickrate_table.to_numpy()
 
@@ -18,4 +18,4 @@ columns = reference_table.columns
 reference_table = pd.DataFrame(reference)
 reference_table.columns = columns
 
-reference_table.to_csv('reference_table.csv', index = False)
+reference_table.to_csv('conversion/reference_table.csv', index = False)

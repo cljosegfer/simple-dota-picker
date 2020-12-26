@@ -3,7 +3,7 @@ import time
 import pandas as pd
 
 from hparams import bracketIds, timeIds, regionIds, gameModeIds
-from dota_stats import HERO_BY_ID
+from conversion.dota_stats import HERO_BY_ID
 
 url = ('https://stratz.com/heroes/meta/trends?' +
        'bracketIds=' + bracketIds +
@@ -45,4 +45,4 @@ for i in range(dim[0]):
     prate = p2f(prate)
     pickrate_table.loc[i, 'Pick Rate'] = prate
 pickrate_table = pickrate_table.sort_values(by = ['Hero'], ignore_index=True)
-pickrate_table.to_csv('pickrate_table.csv', index = False)
+pickrate_table.to_csv('conversion/pickrate_table.csv', index = False)

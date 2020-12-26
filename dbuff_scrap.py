@@ -4,7 +4,7 @@ import pandas as pd
 import time
 
 from hparams import favorite_heroes, patch
-from hero_dictionary import dictionary
+from conversion.hero_dictionary import dictionary
 
 adress = []
 for hero in favorite_heroes:
@@ -46,4 +46,4 @@ for j in range(dim[1])[1:]:
         delta = p2f(delta)
         reference_table.loc[i, favorite_heroes[j - 1]] = delta
 
-reference_table.to_csv('reference_table.csv', index = False)
+reference_table.to_csv('conversion/reference_table.csv', index = False)
