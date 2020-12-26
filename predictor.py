@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from favorite_heroes import formal_names
+from hparams import favorite_heroes
 from hero_dictionary import dictionary
 
 reference_table = pd.read_csv('reference_table.csv')
@@ -19,7 +19,7 @@ decision_table = np.zeros((len(enemy_team), reference_table.shape[1] - 1))
 i = 0
 j = 0
 for enemy in enemy_team:
-    box = np.zeros((1, len(formal_names) + 1))
+    box = np.zeros((1, len(favorite_heroes) + 1))
     for hero in dictionary:
         for hero_name in hero:
             if enemy == hero_name:
@@ -34,6 +34,6 @@ decision_table = np.append(decision_table,
 
 enemy_team.append('Delta')
 result = pd.DataFrame(np.transpose(decision_table),
-                      index = formal_names, columns = enemy_team)
+                      index = favorite_heroes, columns = enemy_team)
 result = result.sort_values(by = ['Delta'])
 print(result.head(5))

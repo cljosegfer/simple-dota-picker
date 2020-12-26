@@ -2,12 +2,8 @@ from selenium import webdriver
 import time
 import pandas as pd
 
+from hparams import bracketIds, timeIds, regionIds, gameModeIds
 from dota_stats import HERO_BY_ID
-
-bracketIds = 'LEGEND'
-timeIds = 'Day'
-regionIds = 'SOUTH_AMERICA'
-gameModeIds = 'ALL_PICK_RANKED'
 
 url = ('https://stratz.com/heroes/meta/trends?' +
        'bracketIds=' + bracketIds +
